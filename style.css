@@ -52,12 +52,14 @@ h1{
 
 .gradient-circle{
     background:conic-gradient(
-        #55b7a4 0%, 
-        #4ca493 40%,
-        #fff 40%,
-        #fff 60%,
-        #336d62 60%,
-        #2a5b52 100%
+        #fff 0%,
+        #fff 5%,
+        #55b7a4 5%, 
+        #4ca493 50%,
+        #336d62 50%,
+        #2a5b52 95%,
+        #fff 95%,
+        #fff 100%
     );
     height: 320px;
     width:320px;
@@ -84,7 +86,7 @@ h1{
     left:140px;
     width:20px;
     height:190px;/* 往下長到圓心 */
-    animation: rotate 7.5s linear forwards infinite;
+    animation: rotate 10s linear forwards infinite;
     transform-origin: bottom center;
 }
 
@@ -95,5 +97,35 @@ h1{
 
     to {
         transform:rotate(360deg);
+    }
+}
+
+/* big circle grow and shrink animation */
+
+.container.grow{
+    animation: grow 4.5s linear forwards;
+}
+
+
+@keyframes grow{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.container.shrink{
+    animation: shrink 4.5s linear forwards;
+}
+
+
+@keyframes shrink{
+    from{
+        transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
     }
 }
