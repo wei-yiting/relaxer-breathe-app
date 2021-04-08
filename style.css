@@ -1,13 +1,12 @@
 /* import font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
-/* general setting */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Ubuntu:wght@500;700&display=swap');/* general setting */
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    background: url(./images/bg-img.jpg) no-repeat center center/cover, rgb(11, 51, 23);
+    background:content-box radial-gradient(rgba(6, 27, 43, 0.95), rgba(0, 0, 0, 0)),url(./images/bg-img.jpg) no-repeat center center/cover;
     min-height:100vh;
     overflow:hidden;
     display:flex;
@@ -15,15 +14,20 @@ body{
     justify-content: center;
     flex-direction: column;
     color:white;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Ubuntu', sans-serif; 
     font-weight: 500;   
     margin:0;
+    position: relative;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
 /* main style */
 h1{
-    letter-spacing:0.1rem;
-    font-weight: 700;
+    position:absolute;
+    top: 7.5vh;
+    left:50%;
+    transform: translateX(-50%);
 }
 
 .container{
@@ -38,9 +42,13 @@ h1{
     transform: scale(1);
 }
 
+.text{
+    font-size: 1.2rem;
+}
+
 /* the circle with a gradient border */
 .circle{
-    background-color: #010f1c;
+    background-color:#10221e;
     height:100%;
     width: 100%;
     border-radius:50%;
@@ -48,6 +56,16 @@ h1{
     top:0;
     left:0;
     z-index: -1;
+    transition: background-color 0.2s;
+}
+
+.circle.in{
+    background-color:#1d3b35;
+}
+
+.circle.out{
+    background-color:#193631;
+
 }
 
 .gradient-circle{
@@ -55,8 +73,8 @@ h1{
         #fff 0%,
         #fff 5%,
         #55b7a4 5%, 
-        #4ca493 50%,
-        #336d62 50%,
+        #4ca493 45%,
+        #336d62 45%,
         #2a5b52 95%,
         #fff 95%,
         #fff 100%
@@ -103,7 +121,7 @@ h1{
 /* big circle grow and shrink animation */
 
 .container.grow{
-    animation: grow 4.5s linear forwards;
+    animation: grow 4s ease-out forwards;
 }
 
 
@@ -117,7 +135,7 @@ h1{
 }
 
 .container.shrink{
-    animation: shrink 4.5s linear forwards;
+    animation: shrink 5s ease-out forwards;
 }
 
 
